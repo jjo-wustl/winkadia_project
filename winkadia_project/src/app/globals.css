@@ -1,249 +1,251 @@
-@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Cinzel+Decorative:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&display=swap");
+/* src/app/globals.css */
 
-@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Cinzel+Decorative:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&display=swap"); /* 프로젝트에서 사용할 영문 판타지 폰트와 한국어 세리프 폰트를 불러옴 */
 
-:root {
-  --bg: #fffaf8;
-  --bg-surface: #fff5f0;
-  --bg-card: #ffffff;
-  --bg-card-hover: #fff0f5;
-  --border: #f0d6e8;
-  --border-strong: #e8b4d8;
+@import "tailwindcss"; /* Tailwind CSS 기능을 전역 스타일에 연결함 */
 
-  --pink-100: #ffeef8;
-  --pink-200: #ffd6ee;
-  --pink-300: #ffb8e0;
-  --pink-400: #ff8cc8;
-  --pink-500: #e8558a;
-  --pink-600: #d44080;
-  --pink-700: #b83070;
+:root { /* 프로젝트 전체에서 재사용할 색상, 폰트, 그림자 변수를 정의함 */
+  --bg: #fffaf8; /* 전체 기본 배경색임 */
+  --bg-surface: #fff5f0; /* 섹션이나 푸터 같은 부드러운 표면 배경색임 */
+  --bg-card: #ffffff; /* 카드 기본 배경색임 */
+  --bg-card-hover: #fff0f5; /* 카드에 마우스를 올렸을 때 배경색임 */
+  --border: #f0d6e8; /* 기본 테두리 색상임 */
+  --border-strong: #e8b4d8; /* 더 강조된 테두리 색상임 */
 
-  --purple-100: #f5eeff;
-  --purple-200: #e8d6ff;
-  --purple-300: #d4b0ff;
-  --purple-400: #b680f0;
-  --purple-500: #9b59b6;
-  --purple-600: #7e3fa0;
+  --pink-100: #ffeef8; /* 가장 연한 핑크 색상임 */
+  --pink-200: #ffd6ee; /* 연한 핑크 색상임 */
+  --pink-300: #ffb8e0; /* 중간보다 연한 핑크 색상임 */
+  --pink-400: #ff8cc8; /* 포인트용 밝은 핑크 색상임 */
+  --pink-500: #e8558a; /* 메인 핑크 색상임 */
+  --pink-600: #d44080; /* 진한 핑크 색상임 */
+  --pink-700: #b83070; /* 가장 진한 핑크 색상임 */
 
-  --gold-300: #fcd34d;
-  --gold-400: #d4a843;
-  --gold-500: #c9a84c;
+  --purple-100: #f5eeff; /* 가장 연한 보라 색상임 */
+  --purple-200: #e8d6ff; /* 연한 보라 색상임 */
+  --purple-300: #d4b0ff; /* 중간보다 연한 보라 색상임 */
+  --purple-400: #b680f0; /* 포인트용 보라 색상임 */
+  --purple-500: #9b59b6; /* 메인 보라 색상임 */
+  --purple-600: #7e3fa0; /* 진한 보라 색상임 */
 
-  --baby-pink: #ffb6c1;
-  --baby-yellow: #fff4b8;
-  --baby-blue: #b8d4ff;
+  --gold-300: #fcd34d; /* 밝은 골드 색상임 */
+  --gold-400: #d4a843; /* 기본 골드 색상임 */
+  --gold-500: #c9a84c; /* 진한 골드 색상임 */
 
-  --text-primary: #3a2040;
-  --text-secondary: #6b4a6e;
-  --text-muted: #9a7a9e;
-  --text-light: #c0a0c4;
+  --baby-pink: #ffb6c1; /* 파티클이나 장식에 쓰는 베이비 핑크임 */
+  --baby-yellow: #fff4b8; /* 파티클이나 장식에 쓰는 연노랑임 */
+  --baby-blue: #b8d4ff; /* 파티클이나 장식에 쓰는 연파랑임 */
 
-  --rarity-rare: #74b9ff;
-  --rarity-epic: #b680f0;
-  --rarity-legend: #ffd700;
+  --text-primary: #3a2040; /* 가장 중요한 본문 텍스트 색상임 */
+  --text-secondary: #6b4a6e; /* 보조 본문 텍스트 색상임 */
+  --text-muted: #9a7a9e; /* 흐린 안내 텍스트 색상임 */
+  --text-light: #c0a0c4; /* 더 연한 보조 텍스트 색상임 */
 
-  --font-display: "Cinzel Decorative", "Noto Serif KR", serif;
-  --font-heading: "Cinzel", "Noto Serif KR", serif;
-  --font-body: "Cormorant Garamond", "Noto Serif KR", serif;
+  --rarity-rare: #74b9ff; /* 레어 오라클 카드 색상임 */
+  --rarity-epic: #b680f0; /* 에픽 오라클 카드 색상임 */
+  --rarity-legend: #ffd700; /* 레전드 오라클 카드 색상임 */
 
-  --glow-pink: 0 0 20px rgba(232, 85, 138, 0.2), 0 0 60px rgba(232, 85, 138, 0.08);
-  --glow-purple: 0 0 20px rgba(155, 89, 182, 0.2), 0 0 60px rgba(155, 89, 182, 0.08);
-  --glow-pink-strong: 0 0 20px rgba(232, 85, 138, 0.35), 0 0 60px rgba(232, 85, 138, 0.15);
-  --shadow-soft: 0 4px 30px rgba(100, 50, 80, 0.08);
-  --shadow-card: 0 2px 16px rgba(100, 50, 80, 0.06);
+  --font-display: "Cinzel Decorative", "Noto Serif KR", serif; /* 큰 로고나 장식 타이틀에 쓰는 폰트임 */
+  --font-heading: "Cinzel", "Noto Serif KR", serif; /* 제목과 버튼에 쓰는 폰트임 */
+  --font-body: "Cormorant Garamond", "Noto Serif KR", serif; /* 본문에 쓰는 폰트임 */
+
+  --glow-pink: 0 0 20px rgba(232, 85, 138, 0.2), 0 0 60px rgba(232, 85, 138, 0.08); /* 부드러운 핑크 빛 그림자임 */
+  --glow-purple: 0 0 20px rgba(155, 89, 182, 0.2), 0 0 60px rgba(155, 89, 182, 0.08); /* 부드러운 보라 빛 그림자임 */
+  --glow-pink-strong: 0 0 20px rgba(232, 85, 138, 0.35), 0 0 60px rgba(232, 85, 138, 0.15); /* 더 강한 핑크 빛 그림자임 */
+  --shadow-soft: 0 4px 30px rgba(100, 50, 80, 0.08); /* 넓고 부드러운 그림자임 */
+  --shadow-card: 0 2px 16px rgba(100, 50, 80, 0.06); /* 카드에 쓰는 얕은 그림자임 */
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+* { box-sizing: border-box; margin: 0; padding: 0; } /* 모든 요소의 박스 계산 방식을 통일하고 기본 여백을 제거함 */
+html { scroll-behavior: smooth; } /* 페이지 내 이동 시 스크롤이 부드럽게 움직이도록 함 */
 
 body {
-  font-family: var(--font-body);
-  background: var(--bg);
-  color: var(--text-primary);
-  min-height: 100vh;
-  overflow-x: hidden;
-  font-size: 18px;
-  line-height: 1.7;
+  font-family: var(--font-body); /* 전체 기본 폰트를 본문용 폰트로 설정함 */
+  background: var(--bg); /* 전체 기본 배경색을 적용함 */
+  color: var(--text-primary); /* 전체 기본 글자색을 적용함 */
+  min-height: 100vh; /* body가 최소 화면 전체 높이를 가지게 함 */
+  overflow-x: hidden; /* 가로 스크롤이 생기지 않게 막음 */
+  font-size: 18px; /* 기본 글자 크기를 설정함 */
+  line-height: 1.7; /* 본문 줄 간격을 넉넉하게 설정함 */
 }
 
-::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb { background: linear-gradient(180deg, var(--pink-400), var(--purple-400)); border-radius: 4px; }
-::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, var(--pink-500), var(--purple-500)); }
+::-webkit-scrollbar { width: 8px; } /* 크롬 계열 브라우저에서 스크롤바 너비를 설정함 */
+::-webkit-scrollbar-track { background: var(--bg); } /* 스크롤바 트랙 배경색을 설정함 */
+::-webkit-scrollbar-thumb { background: linear-gradient(180deg, var(--pink-400), var(--purple-400)); border-radius: 4px; } /* 스크롤바 손잡이에 핑크 보라 그라디언트를 적용함 */
+::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, var(--pink-500), var(--purple-500)); } /* 스크롤바에 마우스를 올렸을 때 색을 더 진하게 함 */
 
-.bg-sanctuary {
+.bg-sanctuary { /* 윙카디아 전체 배경 분위기를 만드는 클래스임 */
   background:
     radial-gradient(ellipse 800px 600px at 20% 10%, rgba(255, 182, 193, 0.15) 0%, transparent 70%),
     radial-gradient(ellipse 600px 500px at 80% 5%, rgba(184, 212, 255, 0.12) 0%, transparent 70%),
     radial-gradient(ellipse 500px 400px at 50% 90%, rgba(232, 180, 216, 0.1) 0%, transparent 60%),
     radial-gradient(ellipse 400px 300px at 70% 50%, rgba(212, 176, 255, 0.08) 0%, transparent 60%),
-    var(--bg);
+    var(--bg); /* 여러 개의 은은한 원형 그라디언트를 겹쳐 판타지 배경을 만듦 */
 }
 
-.page-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
-  width: 100%;
+.page-container { /* 페이지 콘텐츠의 최대 폭과 좌우 여백을 잡는 공통 컨테이너임 */
+  max-width: 1200px; /* 콘텐츠가 너무 넓어지지 않게 최대 폭을 제한함 */
+  margin: 0 auto; /* 컨테이너를 가운데 정렬함 */
+  padding: 0 24px; /* 모바일 기본 좌우 여백을 설정함 */
+  width: 100%; /* 가로 폭을 가능한 만큼 사용함 */
 }
-@media (min-width: 640px) { .page-container { padding: 0 32px; } }
-@media (min-width: 1024px) { .page-container { padding: 0 48px; } }
+@media (min-width: 640px) { .page-container { padding: 0 32px; } } /* 태블릿 이상에서 좌우 여백을 조금 더 넓힘 */
+@media (min-width: 1024px) { .page-container { padding: 0 48px; } } /* 데스크톱에서 좌우 여백을 더 넓힘 */
 
-.ornate-divider {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-  color: var(--pink-400);
-  opacity: 0.5;
-  font-size: 12px;
-  letter-spacing: 4px;
-  margin: 48px 0;
+.ornate-divider { /* 장식용 구분선 전체 스타일임 */
+  display: flex; /* 선과 장식 문자를 가로로 배치함 */
+  align-items: center; /* 세로 가운데 정렬함 */
+  justify-content: center; /* 가로 가운데 정렬함 */
+  gap: 16px; /* 장식 문자와 선 사이 간격을 설정함 */
+  color: var(--pink-400); /* 장식 문자 색상을 설정함 */
+  opacity: 0.5; /* 장식이 너무 강하지 않게 투명도를 낮춤 */
+  font-size: 12px; /* 장식 문자 크기를 설정함 */
+  letter-spacing: 4px; /* 장식 문자 간격을 넓힘 */
+  margin: 48px 0; /* 위아래 여백을 설정함 */
 }
-.ornate-divider::before, .ornate-divider::after {
-  content: "";
-  flex: 1;
-  max-width: 200px;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--pink-300), transparent);
+.ornate-divider::before, .ornate-divider::after { /* 장식 구분선의 양쪽 선 스타일임 */
+  content: ""; /* 가상 요소를 표시하기 위한 빈 내용임 */
+  flex: 1; /* 양쪽 선이 남은 공간을 채우게 함 */
+  max-width: 200px; /* 선이 너무 길어지지 않게 제한함 */
+  height: 1px; /* 선 두께를 설정함 */
+  background: linear-gradient(90deg, transparent, var(--pink-300), transparent); /* 가운데만 은은하게 보이는 선을 만듦 */
 }
 
-.section-gap { margin-bottom: 80px; }
-.section-header { text-align: center; margin-bottom: 48px; }
+.section-gap { margin-bottom: 80px; } /* 섹션 사이 아래 여백을 크게 줌 */
+.section-header { text-align: center; margin-bottom: 48px; } /* 섹션 제목 영역을 가운데 정렬하고 아래 여백을 줌 */
 
-.card-sanctuary {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  position: relative;
-  overflow: hidden;
-  box-shadow: var(--shadow-card);
+.card-sanctuary { /* 윙카디아 카드 공통 스타일임 */
+  background: var(--bg-card); /* 카드 기본 배경색임 */
+  border: 1px solid var(--border); /* 카드 기본 테두리임 */
+  border-radius: 16px; /* 카드 모서리를 둥글게 만듦 */
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); /* hover 변화가 부드럽게 일어나도록 함 */
+  position: relative; /* 카드 안의 가상 요소 위치 기준을 만듦 */
+  overflow: hidden; /* 카드 바깥으로 나가는 효과를 숨김 */
+  box-shadow: var(--shadow-card); /* 카드 기본 그림자를 적용함 */
 }
-.card-sanctuary::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 16px;
-  padding: 1px;
-  background: linear-gradient(135deg, var(--pink-300) 0%, transparent 50%, var(--purple-300) 100%);
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  pointer-events: none;
+.card-sanctuary::before { /* 카드 hover 때 나타나는 그라디언트 테두리 효과임 */
+  content: ""; /* 가상 요소를 표시하기 위한 빈 내용임 */
+  position: absolute; /* 카드 전체를 덮도록 배치함 */
+  inset: 0; /* 상하좌우를 모두 0으로 설정함 */
+  border-radius: 16px; /* 카드와 같은 둥근 모서리를 적용함 */
+  padding: 1px; /* 테두리 두께처럼 보이게 하는 여백임 */
+  background: linear-gradient(135deg, var(--pink-300) 0%, transparent 50%, var(--purple-300) 100%); /* 핑크와 보라가 섞인 테두리용 배경임 */
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); /* 내부는 비우고 테두리만 보이게 만드는 마스크임 */
+  -webkit-mask-composite: xor; /* WebKit 계열 브라우저에서 마스크 합성 방식을 설정함 */
+  mask-composite: exclude; /* 표준 마스크 합성 방식으로 내부를 제외함 */
+  opacity: 0; /* 기본 상태에서는 보이지 않게 함 */
+  transition: opacity 0.4s ease; /* 테두리 효과가 부드럽게 나타나게 함 */
+  pointer-events: none; /* 가상 요소가 클릭을 방해하지 않게 함 */
 }
 .card-sanctuary:hover {
-  background: var(--bg-card-hover);
-  transform: translateY(-4px);
-  box-shadow: var(--glow-pink);
+  background: var(--bg-card-hover); /* hover 때 카드 배경색을 바꿈 */
+  transform: translateY(-4px); /* hover 때 카드가 살짝 위로 떠오르게 함 */
+  box-shadow: var(--glow-pink); /* hover 때 핑크 빛 그림자를 적용함 */
 }
-.card-sanctuary:hover::before { opacity: 1; }
+.card-sanctuary:hover::before { opacity: 1; } /* hover 때 그라디언트 테두리를 보이게 함 */
 
-.btn-pink {
-  background: linear-gradient(135deg, var(--pink-500), var(--purple-500));
-  color: #fff;
-  font-family: var(--font-heading);
-  font-weight: 600;
-  padding: 14px 36px;
-  border-radius: 30px;
-  border: none;
-  cursor: pointer;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  font-size: 14px;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
+.btn-pink { /* 메인 핑크 버튼 스타일임 */
+  background: linear-gradient(135deg, var(--pink-500), var(--purple-500)); /* 핑크와 보라 그라디언트 배경을 적용함 */
+  color: #fff; /* 버튼 글자를 흰색으로 설정함 */
+  font-family: var(--font-heading); /* 버튼 글꼴을 제목용 폰트로 설정함 */
+  font-weight: 600; /* 버튼 글자를 조금 두껍게 함 */
+  padding: 14px 36px; /* 버튼 안쪽 여백을 설정함 */
+  border-radius: 30px; /* 버튼을 둥근 알약 모양으로 만듦 */
+  border: none; /* 기본 테두리를 제거함 */
+  cursor: pointer; /* 마우스를 올리면 클릭 가능한 커서로 표시함 */
+  letter-spacing: 1px; /* 버튼 글자 간격을 조금 넓힘 */
+  text-transform: uppercase; /* 영어 문구를 대문자로 표시함 */
+  font-size: 14px; /* 버튼 글자 크기를 설정함 */
+  transition: all 0.3s ease; /* hover 변화가 부드럽게 일어나도록 함 */
+  position: relative; /* 내부 가상 요소의 위치 기준을 만듦 */
+  overflow: hidden; /* 버튼 밖으로 나가는 효과를 숨김 */
 }
-.btn-pink::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, var(--pink-400), var(--purple-400));
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  pointer-events: none;
+.btn-pink::before { /* 버튼 hover 때 위에 덮이는 밝은 그라디언트 효과임 */
+  content: ""; /* 가상 요소를 표시하기 위한 빈 내용임 */
+  position: absolute; /* 버튼 전체를 덮도록 배치함 */
+  inset: 0; /* 상하좌우를 모두 0으로 설정함 */
+  background: linear-gradient(135deg, var(--pink-400), var(--purple-400)); /* hover 때 보일 더 밝은 그라디언트임 */
+  opacity: 0; /* 기본 상태에서는 보이지 않게 함 */
+  transition: opacity 0.3s ease; /* 투명도 변화가 부드럽게 일어나도록 함 */
+  pointer-events: none; /* 가상 요소가 클릭을 방해하지 않게 함 */
 }
-.btn-pink:hover { box-shadow: var(--glow-pink-strong); transform: translateY(-2px); }
-.btn-pink:hover::before { opacity: 1; }
-.btn-pink span { position: relative; z-index: 1; }
+.btn-pink:hover { box-shadow: var(--glow-pink-strong); transform: translateY(-2px); } /* hover 때 버튼이 살짝 올라가고 빛나게 함 */
+.btn-pink:hover::before { opacity: 1; } /* hover 때 밝은 그라디언트 효과를 보이게 함 */
+.btn-pink span { position: relative; z-index: 1; } /* 버튼 텍스트가 가상 요소 위에 보이도록 함 */
 
-.btn-outline {
-  background: transparent;
-  color: var(--pink-600);
-  font-family: var(--font-heading);
-  font-weight: 500;
-  padding: 14px 36px;
-  border-radius: 30px;
-  border: 2px solid var(--pink-300);
-  cursor: pointer;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  font-size: 14px;
-  transition: all 0.3s ease;
+.btn-outline { /* 외곽선 버튼 스타일임 */
+  background: transparent; /* 배경을 투명하게 설정함 */
+  color: var(--pink-600); /* 버튼 글자색을 진한 핑크로 설정함 */
+  font-family: var(--font-heading); /* 버튼 글꼴을 제목용 폰트로 설정함 */
+  font-weight: 500; /* 버튼 글자 두께를 설정함 */
+  padding: 14px 36px; /* 버튼 안쪽 여백을 설정함 */
+  border-radius: 30px; /* 버튼을 둥근 알약 모양으로 만듦 */
+  border: 2px solid var(--pink-300); /* 연한 핑크 테두리를 적용함 */
+  cursor: pointer; /* 마우스를 올리면 클릭 가능한 커서로 표시함 */
+  letter-spacing: 1px; /* 버튼 글자 간격을 조금 넓힘 */
+  text-transform: uppercase; /* 영어 문구를 대문자로 표시함 */
+  font-size: 14px; /* 버튼 글자 크기를 설정함 */
+  transition: all 0.3s ease; /* hover 변화가 부드럽게 일어나도록 함 */
 }
-.btn-outline:hover { background: var(--pink-100); border-color: var(--pink-500); box-shadow: var(--glow-pink); }
+.btn-outline:hover { background: var(--pink-100); border-color: var(--pink-500); box-shadow: var(--glow-pink); } /* hover 때 배경, 테두리, 빛 효과를 적용함 */
 
-.input-sanctuary {
-  background: var(--bg-surface);
-  border: 2px solid var(--border);
-  color: var(--text-primary);
-  font-family: var(--font-body);
-  font-size: 16px;
-  padding: 14px 20px;
-  border-radius: 12px;
-  width: 100%;
-  outline: none;
-  transition: all 0.3s ease;
+.input-sanctuary { /* 윙카디아 입력창 공통 스타일임 */
+  background: var(--bg-surface); /* 입력창 배경색을 설정함 */
+  border: 2px solid var(--border); /* 입력창 테두리를 설정함 */
+  color: var(--text-primary); /* 입력 글자색을 설정함 */
+  font-family: var(--font-body); /* 입력창 글꼴을 본문용 폰트로 설정함 */
+  font-size: 16px; /* 입력창 글자 크기를 설정함 */
+  padding: 14px 20px; /* 입력창 안쪽 여백을 설정함 */
+  border-radius: 12px; /* 입력창 모서리를 둥글게 만듦 */
+  width: 100%; /* 입력창이 부모 영역의 전체 폭을 사용하게 함 */
+  outline: none; /* 기본 포커스 외곽선을 제거함 */
+  transition: all 0.3s ease; /* 포커스 변화가 부드럽게 일어나도록 함 */
 }
-.input-sanctuary::placeholder { color: var(--text-light); }
-.input-sanctuary:focus { border-color: var(--pink-400); box-shadow: 0 0 0 3px rgba(232, 85, 138, 0.1); }
+.input-sanctuary::placeholder { color: var(--text-light); } /* 입력창 placeholder 색상을 연하게 설정함 */
+.input-sanctuary:focus { border-color: var(--pink-400); box-shadow: 0 0 0 3px rgba(232, 85, 138, 0.1); } /* 입력창 포커스 시 테두리와 외곽 빛을 적용함 */
 
-.text-pink-gradient {
-  background: linear-gradient(135deg, var(--pink-500), var(--purple-500));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.text-pink-gradient { /* 텍스트에 핑크 보라 그라디언트를 입히는 클래스임 */
+  background: linear-gradient(135deg, var(--pink-500), var(--purple-500)); /* 텍스트에 사용할 그라디언트 배경임 */
+  -webkit-background-clip: text; /* WebKit 브라우저에서 배경을 글자 모양으로 자름 */
+  -webkit-text-fill-color: transparent; /* WebKit 브라우저에서 글자 채움을 투명하게 함 */
+  background-clip: text; /* 표준 방식으로 배경을 글자 모양으로 자름 */
 }
-.text-display { font-family: var(--font-display); letter-spacing: 3px; }
-.text-heading { font-family: var(--font-heading); letter-spacing: 2px; }
+.text-display { font-family: var(--font-display); letter-spacing: 3px; } /* 장식용 큰 제목 폰트와 자간을 적용함 */
+.text-heading { font-family: var(--font-heading); letter-spacing: 2px; } /* 일반 제목 폰트와 자간을 적용함 */
 
 /* Oracle Card */
-.oracle-card { position: relative; border-radius: 20px; overflow: hidden; padding: 3px; }
-.oracle-card-rare { background: linear-gradient(135deg, var(--rarity-rare), #5fa8ff, var(--rarity-rare)); box-shadow: 0 0 30px rgba(116,185,255,0.25); }
-.oracle-card-epic { background: linear-gradient(135deg, var(--rarity-epic), #9b59b6, var(--rarity-epic)); box-shadow: 0 0 30px rgba(182,128,240,0.25); }
-.oracle-card-legend { background: linear-gradient(135deg, var(--rarity-legend), #ffb800, var(--rarity-legend)); box-shadow: 0 0 40px rgba(255,215,0,0.3); animation: legendGlow 3s ease-in-out infinite; }
-@keyframes legendGlow { 0%,100% { box-shadow: 0 0 40px rgba(255,215,0,0.3); } 50% { box-shadow: 0 0 60px rgba(255,215,0,0.5); } }
-.oracle-card-inner { background: var(--bg-card); border-radius: 18px; padding: 40px 32px; text-align: center; }
-.rarity-badge { display: inline-block; padding: 4px 16px; border-radius: 20px; font-family: var(--font-heading); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; }
-.rarity-badge-rare { background: rgba(116,185,255,0.12); color: #4a90d9; border: 1px solid rgba(116,185,255,0.3); }
-.rarity-badge-epic { background: rgba(182,128,240,0.12); color: var(--purple-500); border: 1px solid rgba(182,128,240,0.3); }
-.rarity-badge-legend { background: rgba(255,215,0,0.12); color: #b8960a; border: 1px solid rgba(255,215,0,0.3); }
+.oracle-card { position: relative; border-radius: 20px; overflow: hidden; padding: 3px; } /* 오라클 카드의 바깥 테두리 영역임 */
+.oracle-card-rare { background: linear-gradient(135deg, var(--rarity-rare), #5fa8ff, var(--rarity-rare)); box-shadow: 0 0 30px rgba(116,185,255,0.25); } /* 레어 오라클 카드 색상과 빛 효과임 */
+.oracle-card-epic { background: linear-gradient(135deg, var(--rarity-epic), #9b59b6, var(--rarity-epic)); box-shadow: 0 0 30px rgba(182,128,240,0.25); } /* 에픽 오라클 카드 색상과 빛 효과임 */
+.oracle-card-legend { background: linear-gradient(135deg, var(--rarity-legend), #ffb800, var(--rarity-legend)); box-shadow: 0 0 40px rgba(255,215,0,0.3); animation: legendGlow 3s ease-in-out infinite; } /* 레전드 오라클 카드 색상과 반복 빛 효과임 */
+@keyframes legendGlow { 0%,100% { box-shadow: 0 0 40px rgba(255,215,0,0.3); } 50% { box-shadow: 0 0 60px rgba(255,215,0,0.5); } } /* 레전드 카드가 은은하게 강해졌다 약해지는 애니메이션임 */
+.oracle-card-inner { background: var(--bg-card); border-radius: 18px; padding: 40px 32px; text-align: center; } /* 오라클 카드 안쪽 흰 카드 영역임 */
+.rarity-badge { display: inline-block; padding: 4px 16px; border-radius: 20px; font-family: var(--font-heading); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; } /* 오라클 희귀도 배지 공통 스타일임 */
+.rarity-badge-rare { background: rgba(116,185,255,0.12); color: #4a90d9; border: 1px solid rgba(116,185,255,0.3); } /* 레어 배지 스타일임 */
+.rarity-badge-epic { background: rgba(182,128,240,0.12); color: var(--purple-500); border: 1px solid rgba(182,128,240,0.3); } /* 에픽 배지 스타일임 */
+.rarity-badge-legend { background: rgba(255,215,0,0.12); color: #b8960a; border: 1px solid rgba(255,215,0,0.3); } /* 레전드 배지 스타일임 */
 
-.badge-exclusive { background: linear-gradient(135deg, var(--pink-500), var(--purple-500)); color: white; font-family: var(--font-heading); font-size: 11px; padding: 4px 12px; border-radius: 20px; letter-spacing: 1px; text-transform: uppercase; }
+.badge-exclusive { background: linear-gradient(135deg, var(--pink-500), var(--purple-500)); color: white; font-family: var(--font-heading); font-size: 11px; padding: 4px 12px; border-radius: 20px; letter-spacing: 1px; text-transform: uppercase; } /* 독점 영상 배지 스타일임 */
 
 /* Animations */
-@keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
-@keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
-@keyframes pulse-glow { 0%,100% { box-shadow: var(--glow-pink); } 50% { box-shadow: var(--glow-pink-strong); } }
-@keyframes gate-open { 0% { clip-path: inset(0 50% 0 50%); opacity: 0; } 100% { clip-path: inset(0 0 0 0); opacity: 1; } }
-@keyframes oracleReveal { 0% { opacity: 0; transform: scale(0.5) rotateY(180deg); } 50% { opacity: 0.8; transform: scale(1.05) rotateY(10deg); } 100% { opacity: 1; transform: scale(1) rotateY(0deg); } }
-@keyframes heartFall { 0% { transform: translateY(-20px) rotate(0deg) scale(var(--heart-scale)); opacity: 0; } 10% { opacity: var(--heart-opacity); } 90% { opacity: var(--heart-opacity); } 100% { transform: translateY(100vh) rotate(var(--heart-rotate)) scale(var(--heart-scale)); opacity: 0; } }
-@keyframes heartPop { 0% { transform: scale(0); opacity: 1; } 50% { transform: scale(1.2); opacity: 0.8; } 100% { transform: scale(0); opacity: 0; } }
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } } /* 아래에서 위로 올라오며 나타나는 애니메이션임 */
+@keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } } /* 반짝이는 바 효과를 만드는 애니메이션임 */
+@keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } } /* 위아래로 둥실거리는 애니메이션임 */
+@keyframes pulse-glow { 0%,100% { box-shadow: var(--glow-pink); } 50% { box-shadow: var(--glow-pink-strong); } } /* 빛이 강해졌다 약해지는 애니메이션임 */
+@keyframes gate-open { 0% { clip-path: inset(0 50% 0 50%); opacity: 0; } 100% { clip-path: inset(0 0 0 0); opacity: 1; } } /* 문이 열리듯 화면이 나타나는 애니메이션임 */
+@keyframes oracleReveal { 0% { opacity: 0; transform: scale(0.5) rotateY(180deg); } 50% { opacity: 0.8; transform: scale(1.05) rotateY(10deg); } 100% { opacity: 1; transform: scale(1) rotateY(0deg); } } /* 오라클 카드가 회전하며 등장하는 애니메이션임 */
+@keyframes heartFall { 0% { transform: translateY(-20px) rotate(0deg) scale(var(--heart-scale)); opacity: 0; } 10% { opacity: var(--heart-opacity); } 90% { opacity: var(--heart-opacity); } 100% { transform: translateY(100vh) rotate(var(--heart-rotate)) scale(var(--heart-scale)); opacity: 0; } } /* 하트가 위에서 아래로 떨어지는 애니메이션임 */
+@keyframes heartPop { 0% { transform: scale(0); opacity: 1; } 50% { transform: scale(1.2); opacity: 0.8; } 100% { transform: scale(0); opacity: 0; } } /* 마우스 주변 하트가 나타났다가 사라지는 애니메이션임 */
 
-.animate-fade-in-up { animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
-.animate-shimmer { background: linear-gradient(90deg, transparent 0%, var(--pink-300) 50%, transparent 100%); background-size: 200% 100%; animation: shimmer 3s infinite; }
-.animate-float { animation: float 6s ease-in-out infinite; }
-.animate-pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
-.animate-gate-open { animation: gate-open 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
-.animate-oracle-reveal { animation: oracleReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.animate-fade-in-up { animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; } /* fadeInUp 애니메이션을 적용하는 클래스임 */
+.animate-shimmer { background: linear-gradient(90deg, transparent 0%, var(--pink-300) 50%, transparent 100%); background-size: 200% 100%; animation: shimmer 3s infinite; } /* 반짝이는 로딩 바 효과를 적용하는 클래스임 */
+.animate-float { animation: float 6s ease-in-out infinite; } /* 둥실거리는 애니메이션을 적용하는 클래스임 */
+.animate-pulse-glow { animation: pulse-glow 3s ease-in-out infinite; } /* 빛이 맥박처럼 움직이는 애니메이션을 적용하는 클래스임 */
+.animate-gate-open { animation: gate-open 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards; } /* 문이 열리는 듯한 등장 애니메이션을 적용하는 클래스임 */
+.animate-oracle-reveal { animation: oracleReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards; } /* 오라클 카드 등장 애니메이션을 적용하는 클래스임 */
 
-@media (max-width: 768px) {
-  body { font-size: 16px; }
-  .btn-pink, .btn-outline { padding: 12px 28px; font-size: 13px; }
-  .section-gap { margin-bottom: 56px; }
-  .ornate-divider { margin: 36px 0; }
+@media (max-width: 768px) { /* 모바일 화면에서 적용되는 반응형 스타일임 */
+  body { font-size: 16px; } /* 모바일에서는 기본 글자 크기를 조금 줄임 */
+  .btn-pink, .btn-outline { padding: 12px 28px; font-size: 13px; } /* 모바일에서 버튼 크기를 조금 줄임 */
+  .section-gap { margin-bottom: 56px; } /* 모바일에서 섹션 사이 여백을 줄임 */
+  .ornate-divider { margin: 36px 0; } /* 모바일에서 장식 구분선 여백을 줄임 */
 }
