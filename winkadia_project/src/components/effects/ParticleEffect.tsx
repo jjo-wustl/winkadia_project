@@ -8,11 +8,10 @@ const HEART_COLORS = ["#ffb6c1", "#fff4b8", "#b8d4ff", "#ffd6ee", "#d4b0ff", "#f
 const HEART_SVG = (color: string, size: number) => // 색상과 크기를 받아 하트 SVG 문자열을 만드는 함수임
   `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="${color}" xmlns="http://www.w3.org/2000/svg"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>`;
 
-export default function HeartEffect() { // 화면에 하트 비와 마우스 하트 효과를 표시하는 컴포넌트임
+// 화면 배경에 떨어지는 하트 비 효과를 표시하는 컴포넌트임
+export function HeartRain() {
   const rainRef = useRef<HTMLDivElement>(null); // 하트 비가 들어갈 DOM 영역을 참조함
-  const trailRef = useRef<HTMLDivElement>(null); // 마우스 이동 하트가 들어갈 DOM 영역을 참조함
 
-  // Heart rain
   useEffect(() => { // 컴포넌트가 처음 보일 때 하트 비 파티클을 생성함
     const container = rainRef.current; // 하트 비를 넣을 컨테이너를 가져옴
     if (!container) return; // 컨테이너가 없으면 실행하지 않음
@@ -49,7 +48,19 @@ export default function HeartEffect() { // 화면에 하트 비와 마우스 하
     return () => { hearts.forEach((h) => h.remove()); }; // 컴포넌트가 사라질 때 생성한 하트들을 제거함
   }, []);
 
-  // Mouse trail
+  return (
+    <div
+      ref={rainRef}
+      aria-hidden
+      style={{ position: "fixed", inset: 0, pointerEvents: "none", zIndex: 0, overflow: "hidden" }}
+    />
+  ); // 하트 비가 표시되는 배경 레이어임
+}
+
+// 마우스를 따라다니며 하트가 톡톡 튀어 오르는 트레일 효과를 표시하는 컴포넌트임
+export function HeartTrail() {
+  const trailRef = useRef<HTMLDivElement>(null); // 마우스 이동 하트가 들어갈 DOM 영역을 참조함
+
   const handleMouseMove = useCallback((e: MouseEvent) => { // 마우스가 움직일 때 작은 하트를 남기는 함수임
     const container = trailRef.current; // 마우스 하트를 넣을 컨테이너를 가져옴
     if (!container) return; // 컨테이너가 없으면 실행하지 않음
@@ -79,9 +90,20 @@ export default function HeartEffect() { // 화면에 하트 비와 마우스 하
   }, [handleMouseMove]);
 
   return (
+    <div
+      ref={trailRef}
+      aria-hidden
+      style={{ position: "fixed", inset: 0, pointerEvents: "none", zIndex: 9999 }}
+    />
+  ); // 마우스 하트 효과가 표시되는 최상단 레이어임
+}
+
+// 하트 비와 마우스 트레일을 함께 보여주는 합성 컴포넌트이며 기존 사용처와의 호환을 위해 default export로 유지함
+export default function HeartEffect() {
+  return (
     <>
-      <div ref={rainRef} style={{ position: "fixed", inset: 0, pointerEvents: "none", zIndex: 0, overflow: "hidden" }} /> {/* 하트 비가 표시되는 배경 레이어임 */}
-      <div ref={trailRef} style={{ position: "fixed", inset: 0, pointerEvents: "none", zIndex: 9999 }} /> {/* 마우스 하트 효과가 표시되는 최상단 레이어임 */}
+      <HeartRain />
+      <HeartTrail />
     </>
   );
 }

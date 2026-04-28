@@ -54,5 +54,70 @@ const ko = { // 한국어 화면 문구를 모아둔 객체임
   council: { title: "신탁의 전당", subtitle: "영식·영애들이 받은 신탁이 기록되는 곳", noOracles: "아직 기록된 신탁이 없습니다. 신전 대전에서 신탁을 받아보세요!", totalOracles: "기록된 신탁", goToSanctuary: "신전 대전으로 가서 신탁 받기" }, // 신탁의 전당 페이지에서 쓰는 문구임
   profile: { title: "나의 서재", subtitle: "그대의 기록과 축복의 흔적", editProfile: "인장 수정", memberSince: "축복받은 날", watchHistory: "관람 기록", myComments: "나의 기록들", favorites: "축복한 운명들", settings: "설정" }, // 프로필 페이지에서 쓰는 문구임
   footer: { copyright: "© 2025 Winkadia. 모든 운명은 보호받고 있습니다.", terms: "신전 규율", privacy: "비밀 서약", contact: "신전에 서신 보내기", followUs: "윙카디아를 따르라", madeWith: "운명의 실로 엮어진 신전" }, // 푸터에서 쓰는 문구임
+  series: { // Series(로판 시리즈) 페이지에서 쓰는 문구임
+    brandLabel: "Winkadia Original", // 페이지 상단 브랜드 표기임
+    pageTitle: "Romance Fantasy Series", // 페이지 메인 제목임
+    pageDesc: "황궁의 긴장감, 정략으로 얽힌 관계, 비밀을 숨긴 인물들까지. 윙카디아의 로판 시리즈만 모아 보여주는 프리미엄 시리즈 공간입니다", // 페이지 메인 설명 문구임
+    hallName: "Romance Fantasy Hall", // 로판 전용 상영관 이름임
+    hallDesc: "황궁의 권력과 감정선이 함께 흐르는 로맨스 판타지 전용 상영관입니다. 화려한 세계관 속에서도 가장 오래 남는 건 결국 인물의 선택과 흔들리는 마음입니다", // 상영관 설명 문구임
+    rofanOnly: "Rofan Only", // 로판 전용 칩 라벨임
+    continueLabel: "궁정 드라마 이어보기", // 이어보기 섹션 제목임
+    trendingLabel: "지금 가장 주목받는 궁정 드라마", // 트렌딩 섹션 제목임
+    shelfA: "오늘의 황궁 드라마", // 큐레이션 섹션 A 제목임
+    shelfB: "관계선이 강한 드라마", // 큐레이션 섹션 B 제목임
+    editorLabel: "황궁 드라마 하이라이트", // 에디터 노트 섹션 라벨임
+    ui: { // 카드 안쪽 작은 라벨 모음임
+      hallIdentity: "Hall Identity",
+      featuredCharacter: "Featured Character",
+      storyNote: "Story Note",
+      episode: "Episode",
+      status: "Status",
+      keyPoint: "Key Point",
+      watchedSuffix: "시청", // 진행률 뒤에 붙는 안내 문구임
+    },
+    buttons: { // 버튼 라벨 모음임
+      playNow: "지금 재생",
+      freeFirstEp: "1화 무료 보기",
+      trailer: "예고편 보기",
+      seeAll: "전체 보기",
+      seeRanking: "순위 보기",
+      seeMore: "더 보기",
+      watchNow: "지금 감상하기",
+      seeDetails: "상세 정보 보기",
+    },
+    hero: { // 히어로 영역 텍스트임
+      eyebrow: "Romance Fantasy Selection",
+      note: "화려한 세계관 속에서 시작되는 가장 치명적인 관계",
+    },
+    protagonist: { // 주인공 카드 데이터임
+      name: "세라핀 벨루아",
+      role: "몰락 직전 공작가의 장녀",
+      desc: "가문을 지키기 위해 감정보다 판단을 먼저 배운 인물. 누구보다 냉정해 보이지만, 끝내 자기 사람을 버리지 못하는 약점이 그녀를 더 위험하게 만듭니다",
+      tags: ["궁정 서사", "정략 관계", "감정 절제"],
+    },
+    stats: [ // 통계 카드 목록임
+      { label: "Weekly Uploads", value: "124", desc: "이번 주 새롭게 공개된 로판 작품" },
+      { label: "Shortlisted", value: "18", desc: "특별 추천으로 선정된 작품" },
+      { label: "Mood Boards", value: "39", desc: "세계관 무드와 감정선이 돋보이는 큐레이션" },
+    ],
+    project: { // 대표 작품 카드 데이터임
+      eyebrow: "Featured Title",
+      title: "The Contract of Winter Rose",
+      desc: "서로를 믿을 수 없는 관계로 시작했지만, 가장 위태로운 순간마다 서로를 먼저 떠올리게 되는 이야기. 권력과 감정이 동시에 흔들리는 궁정 로맨스의 매력을 가장 잘 보여주는 대표 작품입니다",
+      episode: "EP 06 · 가면무도회 직전",
+      status: "지금 가장 많이 주목받는 회차",
+      point: "계약으로 시작된 관계가 운명처럼 뒤틀리는 순간",
+    },
+    notes: [ // 에디터 노트 목록임
+      { label: "Highlight", title: "차가운 계약이 진심으로 바뀌기 시작하는 순간", desc: "겉으로는 아무 일도 없지만, 단 한 번의 시선으로 관계의 공기가 달라지는 장면이 있습니다. 로판의 매력은 바로 그런 미묘한 변화에 있습니다" },
+      { label: "Must See", title: "드레스보다 더 강하게 남는 건 결국 감정입니다", desc: "화려한 배경과 장식 속에서도 가장 오래 기억에 남는 건 인물의 표정과 선택입니다. 그래서 이 작품은 더 깊게 빠져들게 만듭니다" },
+    ],
+    panels: [ // 큐레이션 패널 목록임 (카드 태그/제목/설명에 사용함)
+      { tag: "Tone Design", title: "궁정 텐션 보드", desc: "권력과 로맨스가 동시에 흐르는 장면들을 모은 큐레이션. 긴장감과 설렘이 한 화면 안에 공존합니다" },
+      { tag: "Character Depth", title: "감정선 배치", desc: "설명보다 눈빛이 먼저 말해주는 관계들. 인물의 감정이 가장 섬세하게 드러나는 장면을 중심으로 소개합니다" },
+      { tag: "Release Setup", title: "대표 컷 선별", desc: "첫 장면만으로도 로판 특유의 무드가 느껴지는 작품들을 모았습니다. 세계관과 감정을 동시에 보여주는 대표 비주얼 큐레이션입니다" },
+    ],
+    actions: ["신규 로판 작품 등록", "궁정 무드보드 열기", "대표 장면 큐레이션", "캐릭터 관계축 편집"], // 액션 라벨 목록임
+  },
 };
 export default ko; // 한국어 번역 객체를 기본 export로 내보냄

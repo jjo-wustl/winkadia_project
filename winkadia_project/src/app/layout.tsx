@@ -4,6 +4,7 @@ import type { Metadata } from "next"; // Next.js에서 메타데이터 타입을
 import "./globals.css"; // 전체 앱에 적용되는 전역 CSS 파일을 불러옴
 import { AuthProvider } from "@/contexts/AuthContext"; // 로그인 상태를 앱 전체에서 사용할 수 있게 감싸주는 Provider를 가져옴
 import { LanguageProvider } from "@/contexts/LanguageContext"; // 언어 상태를 앱 전체에서 사용할 수 있게 감싸주는 Provider를 가져옴
+import { HeartTrail } from "@/components/effects/ParticleEffect"; // 마우스를 따라다니는 하트 트레일 효과를 사이트 전체에서 사용하기 위해 가져옴
 
 export const metadata: Metadata = { // Next.js에서 사용하는 사이트 기본 메타데이터를 정의함
   title: "Winkadia — The Sanctuary", // 브라우저 탭에 표시될 사이트 제목을 설정함
@@ -20,11 +21,15 @@ export default function RootLayout({ // 전체 페이지를 감싸는 최상위 
   return (
     // html 태그의 기본 언어를 한국어로 설정함
     // suppressHydrationWarning은 서버와 브라우저 렌더링 차이로 생기는 경고를 줄이기 위해 사용함
-    <html lang="ko" suppressHydrationWarning>
+    // data-scroll-behavior="smooth"는 Next.js 16이 라우트 전환 시 CSS scroll-behavior:smooth를 일시적으로 끄기 위해 필요한 표식임
+    // (이 속성이 없으면 페이지 이동 시 smooth 애니메이션과 Next.js 내부 스크롤 보정이 충돌하여 콘텐츠가 헤더 뒤로 가려지는 버그가 발생함)
+    <html lang="ko" data-scroll-behavior="smooth" suppressHydrationWarning>
       <body className="bg-sanctuary" suppressHydrationWarning> {/* 전체 body에 sanctuary 배경 클래스를 적용함 */}
         <LanguageProvider> {/* 언어 상태를 앱 전체에서 사용할 수 있도록 감쌈 */}
           <AuthProvider>{children}</AuthProvider> {/* 인증 상태를 앱 전체에서 사용할 수 있도록 실제 페이지 내용을 감쌈 */}
         </LanguageProvider>
+
+        <HeartTrail /> {/* 마우스를 따라다니는 하트 트레일 효과를 모든 페이지에 공통으로 표시함 */}
       </body>
     </html>
   );

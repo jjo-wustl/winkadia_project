@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation"; // 현재 경로가 시리즈 페
 import AuthGuard from "@/components/auth/AuthGuard"; // 로그인 여부를 확인하고 보호된 페이지 접근을 관리하는 컴포넌트를 가져옴
 import Navbar from "@/components/layout/Navbar"; // sanctuary 영역에서 공통으로 사용할 상단 네비게이션을 가져옴
 import Footer from "@/components/layout/Footer"; // sanctuary 영역에서 공통으로 사용할 하단 푸터를 가져옴
-import HeartEffect from "@/components/effects/ParticleEffect"; // 배경에 떠다니는 하트나 파티클 효과를 보여주는 컴포넌트를 가져옴
+import { HeartRain } from "@/components/effects/ParticleEffect"; // 배경에 떠다니는 하트 비 효과만 sanctuary 영역에서 사용함 (트레일은 root layout에서 사이트 전역으로 처리됨)
 
 export default function SanctuaryLayout({
   children,
@@ -42,7 +42,7 @@ export default function SanctuaryLayout({
           </>
         )}
 
-        {!isSeriesPage && <HeartEffect />} {/* 기존 하트 배경 효과는 시리즈가 아닌 페이지에서만 표시함 */}
+        {!isSeriesPage && <HeartRain />} {/* 떨어지는 하트 비는 시리즈가 아닌 페이지에서만 표시함 (마우스 트레일은 root layout에서 사이트 전역으로 처리됨) */}
 
         <Navbar /> {/* 상단 공통 네비게이션을 표시함 */}
 

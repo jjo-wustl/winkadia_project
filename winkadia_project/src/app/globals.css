@@ -106,7 +106,10 @@
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; } /* 모든 요소의 박스 계산 방식을 통일하고 기본 여백을 제거함 */
-html { scroll-behavior: smooth; } /* 페이지 내 이동 시 스크롤이 부드럽게 움직이도록 함 */
+html {
+  scroll-behavior: smooth; /* 페이지 내 이동 시 스크롤이 부드럽게 움직이도록 함 */
+  scroll-padding-top: 84px; /* fixed Navbar(높이 84px) 뒤로 콘텐츠가 가려지지 않도록 hash/scrollIntoView 시 스크롤 패딩을 줌 */
+}
 
 body {
   font-family: var(--font-body); /* 전체 기본 폰트를 본문용 폰트로 설정함 */
