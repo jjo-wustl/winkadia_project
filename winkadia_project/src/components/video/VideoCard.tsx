@@ -10,7 +10,7 @@ import type { Video } from "@/types"; // 영상 데이터 타입을 가져옴
 export default function VideoCard({ video, featured = false }: { video: Video; featured?: boolean }) { // 영상 카드 컴포넌트이며 대표 카드 여부를 받을 수 있음
   const { t, localized } = useLanguage(); // 번역 문구와 다국어 필드 선택 함수를 가져옴
   return (
-    <Link href={`/sanctuary/theater/${video.id}`} className="block group" style={{ textDecoration: "none" }}> {/* 카드를 누르면 해당 영상 상세 페이지로 이동함 */}
+    <Link href={`/sanctuary/series/${video.id}`} className="block group" style={{ textDecoration: "none" }}> {/* 카드를 누르면 해당 영상 상세 페이지로 이동함 */}
       <div className={`card-sanctuary overflow-hidden ${featured ? "md:flex" : ""}`}> {/* 영상 카드 전체 영역이며 featured면 데스크톱에서 가로 배치함 */}
         <div className={`relative overflow-hidden ${featured ? "md:w-2/3" : ""}`} style={{ aspectRatio: featured ? undefined : "16/9" }}> {/* 썸네일 또는 영상 미리보기 영역임 */}
           <div className="w-full h-full" style={{ minHeight: "200px", background: "linear-gradient(135deg, var(--pink-100), var(--purple-100), var(--pink-100))" }}> {/* 실제 썸네일 대신 그라디언트 배경을 표시함 */}

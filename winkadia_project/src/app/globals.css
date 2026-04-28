@@ -1,8 +1,43 @@
 /* src/app/globals.css */
 
-@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Cinzel+Decorative:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&display=swap"); /* 프로젝트에서 사용할 영문 판타지 폰트와 한국어 세리프 폰트를 불러옴 */
+/* 기존 Google 폰트 import 백업용으로 주석 처리함 */
+/* @import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Cinzel+Decorative:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&display=swap"); */
 
 @import "tailwindcss"; /* Tailwind CSS 기능을 전역 스타일에 연결함 */
+
+/* 이전 온글잎 박다현체 백업용으로 주석 처리함 */
+/*
+@font-face {
+  font-family: "OngleipParkDahyeon";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/2411-3@1.0/Ownglyph_ParkDaHyun.woff2") format("woff2");
+  font-weight: normal;
+  font-display: swap;
+}
+*/
+
+/* 이전 그리운 코코최토툰 폰트 백업용으로 주석 처리함 */
+/*
+@font-face {
+  font-family: "NostalgicCocochoitoon";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/2601-1@1.0/Griun_Cocochoitoon-Rg.woff2") format("woff2");
+  font-weight: normal;
+  font-display: swap;
+}
+*/
+
+@font-face {
+  font-family: "SchoolSafeOuting";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/2408-5@1.0/HakgyoansimNadeuriTTF-L.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+} /* 학교안심 나들이 일반 굵기 폰트를 등록함 */
+
+@font-face {
+  font-family: "SchoolSafeOuting";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/2408-5@1.0/HakgyoansimNadeuriTTF-B.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+} /* 학교안심 나들이 굵은 굵기 폰트를 등록함 */
 
 :root { /* 프로젝트 전체에서 재사용할 색상, 폰트, 그림자 변수를 정의함 */
   --bg: #fffaf8; /* 전체 기본 배경색임 */
@@ -44,9 +79,24 @@
   --rarity-epic: #b680f0; /* 에픽 오라클 카드 색상임 */
   --rarity-legend: #ffd700; /* 레전드 오라클 카드 색상임 */
 
-  --font-display: "Cinzel Decorative", "Noto Serif KR", serif; /* 큰 로고나 장식 타이틀에 쓰는 폰트임 */
-  --font-heading: "Cinzel", "Noto Serif KR", serif; /* 제목과 버튼에 쓰는 폰트임 */
-  --font-body: "Cormorant Garamond", "Noto Serif KR", serif; /* 본문에 쓰는 폰트임 */
+  /* 기존 폰트 변수 백업용으로 주석 처리함 */
+  /* --font-display: "Cinzel Decorative", "Noto Serif KR", serif; */
+  /* --font-heading: "Cinzel", "Noto Serif KR", serif; */
+  /* --font-body: "Cormorant Garamond", "Noto Serif KR", serif; */
+
+  /* 이전 온글잎 박다현체 변수 백업용으로 주석 처리함 */
+  /* --font-display: "OngleipParkDahyeon", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif; */
+  /* --font-heading: "OngleipParkDahyeon", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif; */
+  /* --font-body: "OngleipParkDahyeon", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif; */
+
+  /* 이전 그리운 코코최토툰 변수 백업용으로 주석 처리함 */
+  /* --font-display: "NostalgicCocochoitoon", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif; */
+  /* --font-heading: "NostalgicCocochoitoon", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif; */
+  /* --font-body: "NostalgicCocochoitoon", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif; */
+
+  --font-display: "SchoolSafeOuting", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif; /* 큰 로고나 장식 타이틀에 쓰는 폰트임 */
+  --font-heading: "SchoolSafeOuting", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif; /* 제목과 버튼에 쓰는 폰트임 */
+  --font-body: "SchoolSafeOuting", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif; /* 본문에 쓰는 폰트임 */
 
   --glow-pink: 0 0 20px rgba(232, 85, 138, 0.2), 0 0 60px rgba(232, 85, 138, 0.08); /* 부드러운 핑크 빛 그림자임 */
   --glow-purple: 0 0 20px rgba(155, 89, 182, 0.2), 0 0 60px rgba(155, 89, 182, 0.08); /* 부드러운 보라 빛 그림자임 */

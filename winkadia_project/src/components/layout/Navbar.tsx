@@ -89,8 +89,8 @@ export default function Navbar() { // sanctuary 영역 상단 네비게이션 �
             </div>
           </div>
 
-          <div className="flex items-center justify-end gap-3 sm:gap-4"> {/* 오른쪽 언어, 유저, 로그인 영역임 */}
-            <div className="hidden md:block">
+          <div className="flex items-center justify-end gap-4 sm:gap-5"> {/* 오른쪽 언어, 유저, 로그인 영역이며 오른쪽 요소만 크게 보이게 함 */}
+            <div className="hidden items-center justify-center md:flex">
               <LanguageToggle /> {/* 데스크톱에서 언어 전환 버튼을 표시함 */}
             </div>
 
@@ -98,30 +98,30 @@ export default function Navbar() { // sanctuary 영역 상단 네비게이션 �
               <>
                 <Link
                   href="/sanctuary/profile"
-                  className="hidden items-center gap-2 rounded-full border border-[#e7dcfa] bg-white/72 px-4 py-2.5 text-sm font-semibold text-[#7a6997] shadow-sm transition hover:bg-white md:flex"
+                  className="hidden min-h-[32px] min-w-[100px] items-center justify-center gap-2.5 rounded-full border border-[#e7dcfa] bg-white/72 px-0 py-3 text-[17px] font-bold text-[#7a6997] shadow-sm transition hover:bg-white md:flex"
                   style={{ textDecoration: "none" }}
-                > {/* 로그인한 사용자의 프로필 링크임 */}
-                  <User size={16} />
-                  <span className="max-w-[120px] truncate">
+                > {/* 로그인한 사용자의 프로필 링크이며 min-width로 양옆 공간을 확보함 */}
+                  <User size={20} />
+                  <span className="max-w-[118px] truncate">
                     {user.displayName || user.email?.split("@")[0]}
                   </span>
                 </Link>
 
                 <button
                   onClick={logout}
-                  className="hidden h-10 w-10 items-center justify-center rounded-full border border-[#e7dcfa] bg-white/72 text-[#8a69d6] shadow-sm transition hover:bg-white md:flex"
+                  className="hidden h-12 w-12 items-center justify-center rounded-full border border-[#e7dcfa] bg-white/72 text-[#8a69d6] shadow-sm transition hover:bg-white md:flex"
                   title={t.auth.logout}
-                > {/* 로그아웃 버튼임 */}
-                  <LogOut size={16} />
+                > {/* 로그아웃 버튼이며 오른쪽 영역만 크기를 키움 */}
+                  <LogOut size={20} />
                 </button>
               </>
             ) : (
               <Link
                 href="/login"
-                className="hidden items-center gap-2 rounded-full bg-gradient-to-r from-[#9b78e5] to-[#7f5bcc] px-5 py-2.5 text-sm font-semibold text-white shadow-[0_8px_20px_rgba(127,91,204,0.25)] transition hover:opacity-95 md:flex"
+                className="hidden min-h-[48px] min-w-[150px] items-center justify-center gap-2.5 rounded-full bg-gradient-to-r from-[#9b78e5] to-[#7f5bcc] px-0 py-3 text-[17px] font-bold text-white shadow-[0_8px_20px_rgba(127,91,204,0.25)] transition hover:opacity-95 md:flex"
                 style={{ textDecoration: "none" }}
-              > {/* 로그인하지 않은 사용자에게 보여주는 로그인 버튼임 */}
-                <LogIn size={15} />
+              > {/* 로그인하지 않은 사용자에게 보여주는 로그인 버튼이며 min-width로 양옆 공간을 확보함 */}
+                <LogIn size={19} />
                 <span>Login</span>
               </Link>
             )}
