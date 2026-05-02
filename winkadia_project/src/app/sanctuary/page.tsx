@@ -15,7 +15,7 @@ type FeaturedFilm = SeriesVideoItem & { thumbnailUrl: string };
 
 const homeCopy = {
   ko: {
-    badge: "팬들을 위한 꿈결 같은 안식처",
+    badge: "윙카디아 신전",
     titleLine1: "모든 판타지의 순간이 모이는 곳,",
     titleLine2: "윙카디아에 오신 것을",
     titleLine3: "환영합니다",
@@ -28,7 +28,7 @@ const homeCopy = {
     footer: "당신의 판타지가, 여기에서 빛나기를",
   },
   en: {
-    badge: "A dreamlike sanctuary for fans",
+    badge: "Winkadia Sanctuary",
     titleLine1: "Where every fantasy moment gathers,",
     titleLine2: "welcome to",
     titleLine3: "Winkadia",
