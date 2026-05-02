@@ -2,11 +2,14 @@
 
 "use client"; // 이 파일이 브라우저에서 동작하는 클라이언트 컴포넌트임
 
+import { useEffect } from "react"; // sanctuary 진입 시 썸네일을 백그라운드로 프리페치하기 위해 사용함
 import { usePathname } from "next/navigation"; // 현재 경로가 시리즈 페이지인지 확인하기 위해 가져옴
 import AuthGuard from "@/components/auth/AuthGuard"; // 로그인 여부를 확인하고 보호된 페이지 접근을 관리하는 컴포넌트를 가져옴
 import Navbar from "@/components/layout/Navbar"; // sanctuary 영역에서 공통으로 사용할 상단 네비게이션을 가져옴
 import Footer from "@/components/layout/Footer"; // sanctuary 영역에서 공통으로 사용할 하단 푸터를 가져옴
 import { HeartRain } from "@/components/effects/ParticleEffect"; // 배경에 떠다니는 하트 비 효과만 sanctuary 영역에서 사용함 (트레일은 root layout에서 사이트 전역으로 처리됨)
+import { seriesVideos } from "@/data/series-videos"; // Home/Series 카드에 쓸 썸네일 path 목록을 가져옴
+import { prefetchThumbnails } from "@/lib/thumbnail-cache"; // 백그라운드 URL 발급 + 이미지 바이트 프리로드를 트리거
 
 export default function SanctuaryLayout({
   children,
@@ -15,6 +18,15 @@ export default function SanctuaryLayout({
 }) { // sanctuary 경로 아래 페이지들을 공통 레이아웃으로 감싸는 컴포넌트임
   const pathname = usePathname(); // 현재 페이지 경로를 가져옴
   const isSeriesPage = pathname.startsWith("/sanctuary/series"); // 시리즈 페이지인지 확인함
+
+  // sanctuary 진입 시점에 Home/Series 카드에 사용될 썸네일을 백그라운드로 프리페치함.
+  // 1) Firebase getDownloadURL 발급 + 2) 이미지 바이트 다운로드까지 동시에 시작되어,
+  // 사용자가 실제로 카드 영역을 보는 시점에는 이미 브라우저 HTTP 캐시에 적재되어 있어 즉시 표시됨.
+  // 캐시는 모듈 레벨에서 관리되므로 페이지 이동(Home <-> Series) 시 재발급되지 않음.
+  // useEffect 빈 deps 로 sanctuary 마운트 1회만 실행 (AuthGuard 가 인증을 보장하므로 별도 user 의존 불필요)
+  useEffect(() => {
+    prefetchThumbnails(seriesVideos.map((video) => video.thumbnailPath));
+  }, []);
 
   return (
     <AuthGuard>
