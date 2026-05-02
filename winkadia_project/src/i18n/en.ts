@@ -58,6 +58,17 @@ const en = { // 영어 화면 문구를 모아둔 객체임
     followUs: "Follow Winkadia", // (현재 미사용 - 추후 사용 가능성 위해 유지)
     madeWith: "A Sanctuary woven with threads of destiny", // (현재 미사용 - 추후 사용 가능성 위해 유지)
   },
+  watch: { // Watch(영상 재생) 페이지에서 쓰는 문구임
+    views: "Views", // 조회수 라벨
+    commentsTitle: "Comments", // 댓글 섹션 제목
+    empty: "No comments yet", // 댓글이 0개일 때 안내
+    loadingComments: "Loading comments...", // 댓글 첫 구독 시 로딩 안내
+    placeholder: "Leave a comment", // 댓글 입력창 placeholder
+    submit: "Post", // 댓글 등록 버튼
+    submitting: "Posting...", // 등록 진행 중 버튼 라벨
+    submitError: "Failed to post comment. Please try again later", // 댓글 등록 실패 안내
+    loginRequired: "Log in to leave a comment", // 비로그인 안내
+  },
   series: { // Series 페이지에서 쓰는 문구임
     pageTitle: "Series", // 페이지 메인 제목임
     badge: "Winkadia Exclusive", // 페이지 상단 독점 배지 문구임

@@ -62,6 +62,17 @@ const ko = { // 한국어 화면 문구를 모아둔 객체임
     followUs: "윙카디아를 따르라", // (현재 미사용 - 추후 사용 가능성 위해 유지)
     madeWith: "운명의 실로 엮어진 신전", // (현재 미사용 - 추후 사용 가능성 위해 유지)
   },
+  watch: { // Watch(영상 재생) 페이지에서 쓰는 문구임
+    views: "조회수", // 조회수 라벨
+    commentsTitle: "댓글", // 댓글 섹션 제목
+    empty: "아직 댓글이 없습니다", // 댓글이 0개일 때 안내
+    loadingComments: "댓글 불러오는 중...", // 댓글 첫 구독 시 로딩 안내
+    placeholder: "댓글을 남겨주세요", // 댓글 입력창 placeholder
+    submit: "등록", // 댓글 등록 버튼
+    submitting: "등록 중...", // 등록 진행 중 버튼 라벨
+    submitError: "댓글 등록에 실패했습니다. 잠시 후 다시 시도해주세요", // 댓글 등록 실패 안내
+    loginRequired: "로그인 후 댓글을 작성할 수 있습니다", // 비로그인 안내
+  },
   series: { // Series 페이지에서 쓰는 문구임
     pageTitle: "Series", // 페이지 메인 제목임
     badge: "Winkadia Exclusive", // 페이지 상단 독점 배지 문구임
