@@ -1,20 +1,30 @@
 // src/components/layout/Navbar.tsx
+//
+// sanctuary 영역 상단 네비게이션 컴포넌트임.
+// 게임홈(/sanctuary/game)에서는 네비게이션을 보여주고,
+// 실제 게임 플레이 하위 경로(/sanctuary/game/...)에서는 풀페이지 몰입을 위해 숨김.
 
 "use client"; // 이 파일이 브라우저에서 동작하는 클라이언트 컴포넌트임
 
 import { useState } from "react"; // 모바일 메뉴 열림 상태를 관리하기 위해 useState를 가져옴
 import Link from "next/link"; // 페이지 이동 링크를 만들기 위해 Link를 가져옴
-import { usePathname } from "next/navigation"; // 현재 경로를 확인해 활성 메뉴를 표시하기 위해 usePathname을 가져옴
+import { usePathname } from "next/navigation"; // 현재 경로를 확인해 활성 메뉴와 게임 플레이 경로를 판단하기 위해 usePathname을 가져옴
 import { useAuth } from "@/contexts/AuthContext"; // 현재 사용자 정보와 로그아웃 함수를 가져오기 위해 인증 컨텍스트를 가져옴
 import { useLanguage } from "@/contexts/LanguageContext"; // 현재 언어 상태와 번역 문구를 사용하기 위해 가져옴
 import LanguageToggle from "@/components/ui/LanguageToggle"; // 언어 전환 버튼을 가져옴
 import { LogIn, LogOut, Menu, Sparkles, User, X } from "lucide-react"; // 네비게이션에 사용할 아이콘들을 가져옴
 
-export default function Navbar() { // sanctuary 영역 상단 네비게이션 컴포넌트임
+export default function Navbar() {
   const { user, logout } = useAuth(); // 현재 사용자 정보와 로그아웃 함수를 가져옴
   const { t } = useLanguage(); // 번역 문구를 가져옴
   const pathname = usePathname(); // 현재 접속 중인 경로를 가져옴
   const [mobileOpen, setMobileOpen] = useState(false); // 모바일 메뉴가 열려 있는지 저장함
+
+  const isGamePlayRoute = pathname.startsWith("/sanctuary/game/"); // 게임홈이 아닌 실제 게임 플레이 화면인지 판단함
+
+  if (isGamePlayRoute) {
+    return null;
+  } // 게임 플레이 화면에서는 사이트 네비게이션을 숨김
 
   const navLinks = [
     { href: "/sanctuary", label: "Home" },
@@ -30,23 +40,30 @@ export default function Navbar() { // sanctuary 영역 상단 네비게이션 �
     <nav
       className="fixed left-0 right-0 top-0 z-50 border-b border-white/45 bg-white/50 backdrop-blur-xl"
       style={{ boxShadow: "0 10px 30px rgba(141, 113, 182, 0.08)" }}
-    > {/* 화면 상단에 고정되는 가로 전체 네비게이션 영역임 */}
-      <div className="mx-auto w-full px-6 sm:px-8 lg:px-10"> {/* 헤더 내부 좌우 여백을 잡음 */}
-        <div className="grid h-[84px] grid-cols-[auto_1fr_auto] items-center gap-6"> {/* 로고, 가운데 메뉴, 오른쪽 영역을 가로로 배치함 */}
+    >
+      {/* 화면 상단에 고정되는 가로 전체 네비게이션 영역임 */}
+      <div className="mx-auto w-full px-6 sm:px-8 lg:px-10">
+        {/* 헤더 내부 좌우 여백을 잡음 */}
+        <div className="grid h-[84px] grid-cols-[auto_1fr_auto] items-center gap-6">
+          {/* 로고, 가운데 메뉴, 오른쪽 영역을 가로로 배치함 */}
           <Link
             href="/sanctuary"
             className="flex items-center"
             style={{ textDecoration: "none" }}
-          > {/* 로고를 누르면 Home으로 이동함 */}
+          >
+            {/* 로고를 누르면 Home으로 이동함 */}
             <img
               src="/logo.png"
               alt="WINKADIA"
               className="h-auto w-[190px] select-none object-contain sm:w-[220px] lg:w-[250px]"
-            /> {/* public/logo.png 이미지를 로고로 표시함 */}
+            />
+            {/* public/logo.png 이미지를 로고로 표시함 */}
           </Link>
 
-          <div className="hidden items-center justify-center md:flex"> {/* 데스크톱 가운데 메뉴 영역임 */}
-            <div className="flex items-center gap-12 lg:gap-16"> {/* 메뉴 사이 여백을 넉넉하게 줌 */}
+          <div className="hidden items-center justify-center md:flex">
+            {/* 데스크톱 가운데 메뉴 영역임 */}
+            <div className="flex items-center gap-12 lg:gap-16">
+              {/* 메뉴 사이 여백을 넉넉하게 줌 */}
               {navLinks.map((link) => {
                 const active = isActive(link.href); // 현재 메뉴가 활성 상태인지 저장함
 
@@ -61,7 +78,8 @@ export default function Navbar() { // sanctuary 영역 상단 네비게이션 �
                       fontSize: "21px",
                       lineHeight: 1.1,
                     }}
-                  > {/* 메뉴 링크를 텍스트형으로 표시함 */}
+                  >
+                    {/* 메뉴 링크를 텍스트형으로 표시함 */}
                     <span className="relative inline-block">
                       {link.label}
 
@@ -74,13 +92,15 @@ export default function Navbar() { // sanctuary 영역 상단 네비게이션 �
                                 "linear-gradient(90deg, #9b7be8 0%, #7f5bcc 55%, #9b7be8 100%)",
                               boxShadow: "0 2px 8px rgba(127, 91, 204, 0.18)",
                             }}
-                          /> {/* 활성 메뉴 아래에 보라색 밑줄 장식을 표시함 */}
+                          />
+                          {/* 활성 메뉴 아래에 보라색 밑줄 장식을 표시함 */}
 
                           <Sparkles
                             size={12}
                             className="pointer-events-none absolute -right-4 top-0"
                             style={{ color: "#b89ef3" }}
-                          /> {/* 활성 메뉴 옆에 작은 반짝이 장식을 표시함 */}
+                          />
+                          {/* 활성 메뉴 옆에 작은 반짝이 장식을 표시함 */}
                         </>
                       )}
                     </span>
@@ -90,9 +110,11 @@ export default function Navbar() { // sanctuary 영역 상단 네비게이션 �
             </div>
           </div>
 
-          <div className="flex items-center justify-end gap-4 sm:gap-5"> {/* 오른쪽 언어, 유저, 로그인 영역이며 오른쪽 요소만 크게 보이게 함 */}
+          <div className="flex items-center justify-end gap-4 sm:gap-5">
+            {/* 오른쪽 언어, 유저, 로그인 영역이며 오른쪽 요소만 크게 보이게 함 */}
             <div className="hidden items-center justify-center md:flex">
-              <LanguageToggle /> {/* 데스크톱에서 언어 전환 버튼을 표시함 */}
+              <LanguageToggle />
+              {/* 데스크톱에서 언어 전환 버튼을 표시함 */}
             </div>
 
             {user ? (
@@ -101,7 +123,8 @@ export default function Navbar() { // sanctuary 영역 상단 네비게이션 �
                   href="/sanctuary/profile"
                   className="hidden min-h-[32px] min-w-[100px] items-center justify-center gap-2.5 rounded-full border border-[#e7dcfa] bg-white/72 px-0 py-3 text-[17px] font-bold text-[#7a6997] shadow-sm transition hover:bg-white md:flex"
                   style={{ textDecoration: "none" }}
-                > {/* 로그인한 사용자의 프로필 링크이며 min-width로 양옆 공간을 확보함 */}
+                >
+                  {/* 로그인한 사용자의 프로필 링크이며 min-width로 양옆 공간을 확보함 */}
                   <User size={20} />
                   <span className="max-w-[118px] truncate">
                     {user.displayName || user.email?.split("@")[0]}
@@ -112,7 +135,8 @@ export default function Navbar() { // sanctuary 영역 상단 네비게이션 �
                   onClick={logout}
                   className="hidden h-12 w-12 items-center justify-center rounded-full border border-[#e7dcfa] bg-white/72 text-[#8a69d6] shadow-sm transition hover:bg-white md:flex"
                   title={t.auth.logout}
-                > {/* 로그아웃 버튼이며 오른쪽 영역만 크기를 키움 */}
+                >
+                  {/* 로그아웃 버튼이며 오른쪽 영역만 크기를 키움 */}
                   <LogOut size={20} />
                 </button>
               </>
@@ -121,7 +145,8 @@ export default function Navbar() { // sanctuary 영역 상단 네비게이션 �
                 href="/login"
                 className="hidden min-h-[48px] min-w-[150px] items-center justify-center gap-2.5 rounded-full bg-gradient-to-r from-[#9b78e5] to-[#7f5bcc] px-0 py-3 text-[17px] font-bold text-white shadow-[0_8px_20px_rgba(127,91,204,0.25)] transition hover:opacity-95 md:flex"
                 style={{ textDecoration: "none" }}
-              > {/* 로그인하지 않은 사용자에게 보여주는 로그인 버튼이며 min-width로 양옆 공간을 확보함 */}
+              >
+                {/* 로그인하지 않은 사용자에게 보여주는 로그인 버튼이며 min-width로 양옆 공간을 확보함 */}
                 <LogIn size={19} />
                 <span>Login</span>
               </Link>
@@ -130,7 +155,8 @@ export default function Navbar() { // sanctuary 영역 상단 네비게이션 �
             <button
               className="flex h-10 w-10 items-center justify-center rounded-full border border-[#e7dcfa] bg-white/72 text-[#8a69d6] md:hidden"
               onClick={() => setMobileOpen(!mobileOpen)}
-            > {/* 모바일 메뉴 열기와 닫기를 전환함 */}
+            >
+              {/* 모바일 메뉴 열기와 닫기를 전환함 */}
               {mobileOpen ? <X size={22} /> : <Menu size={22} />}
             </button>
           </div>
@@ -138,7 +164,8 @@ export default function Navbar() { // sanctuary 영역 상단 네비게이션 �
       </div>
 
       {mobileOpen && (
-        <div className="border-t border-white/60 bg-[#fcf9ff]/95 px-5 py-5 shadow-[0_16px_40px_rgba(132,98,174,0.12)] backdrop-blur-xl md:hidden"> {/* 모바일 메뉴 영역임 */}
+        <div className="border-t border-white/60 bg-[#fcf9ff]/95 px-5 py-5 shadow-[0_16px_40px_rgba(132,98,174,0.12)] backdrop-blur-xl md:hidden">
+          {/* 모바일 메뉴 영역임 */}
           <div className="mx-auto flex max-w-[520px] flex-col gap-3">
             {navLinks.map((link) => {
               const active = isActive(link.href); // 모바일 메뉴 활성 상태를 저장함
@@ -155,15 +182,18 @@ export default function Navbar() { // sanctuary 영역 상단 네비게이션 �
                     background: active ? "rgba(155, 123, 232, 0.08)" : "transparent",
                     fontSize: "18px",
                   }}
-                > {/* 모바일 메뉴 링크임 */}
+                >
+                  {/* 모바일 메뉴 링크임 */}
                   {link.label}
                 </Link>
               );
             })}
 
-            <div className="mt-2 border-t border-[#eee6fb] pt-3"> {/* 모바일 하단 유저 영역을 메뉴와 나눔 */}
+            <div className="mt-2 border-t border-[#eee6fb] pt-3">
+              {/* 모바일 하단 유저 영역을 메뉴와 나눔 */}
               <div className="mb-3">
-                <LanguageToggle /> {/* 모바일에서 언어 전환 버튼을 표시함 */}
+                <LanguageToggle />
+                {/* 모바일에서 언어 전환 버튼을 표시함 */}
               </div>
 
               {user ? (
@@ -173,7 +203,8 @@ export default function Navbar() { // sanctuary 영역 상단 네비게이션 �
                     onClick={() => setMobileOpen(false)}
                     className="rounded-2xl bg-white px-5 py-3 text-center text-[15px] font-semibold text-[#7a6997]"
                     style={{ textDecoration: "none" }}
-                  > {/* 모바일 프로필 링크임 */}
+                  >
+                    {/* 모바일 프로필 링크임 */}
                     Profile
                   </Link>
 
@@ -183,7 +214,8 @@ export default function Navbar() { // sanctuary 영역 상단 네비게이션 �
                       setMobileOpen(false);
                     }}
                     className="rounded-2xl bg-white px-5 py-3 text-center text-[15px] font-semibold text-[#8a69d6]"
-                  > {/* 모바일 로그아웃 버튼임 */}
+                  >
+                    {/* 모바일 로그아웃 버튼임 */}
                     Logout
                   </button>
                 </div>
@@ -193,7 +225,8 @@ export default function Navbar() { // sanctuary 영역 상단 네비게이션 �
                   onClick={() => setMobileOpen(false)}
                   className="block rounded-2xl bg-gradient-to-r from-[#9b78e5] to-[#7f5bcc] px-5 py-3 text-center text-[15px] font-semibold text-white"
                   style={{ textDecoration: "none" }}
-                > {/* 모바일 로그인 버튼임 */}
+                >
+                  {/* 모바일 로그인 버튼임 */}
                   Login
                 </Link>
               )}

@@ -20,12 +20,5 @@ export default async function GamePlayPage({ params }: GamePlayPageProps) {
     notFound();
   }
 
-  return (
-    <div className="flex w-full justify-center px-6 py-20 text-[#32283d] sm:px-8 lg:px-10">
-      {/* 기존 sanctuary layout 배경을 그대로 사용하고, 플레이 화면만 중앙 정렬함 */}
-      <div className="w-full max-w-[1460px]">
-        <GameFmvPlayer episode={episode} />
-      </div>
-    </div>
-  );
+  return <GameFmvPlayer episode={episode} />;
 }

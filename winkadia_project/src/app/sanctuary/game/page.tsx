@@ -85,7 +85,7 @@ export default function GamePage() {
 
               <div className="mt-14 flex flex-col gap-4 sm:flex-row">
                 <Link
-                  href="/sanctuary/game/play/ep-01"
+                  href="/sanctuary/game/play/ep-01?autoplay=1"
                   className="inline-flex min-h-[60px] items-center justify-center gap-2.5 rounded-full bg-gradient-to-r from-[#9b78e5] to-[#7f5bcc] px-9 py-3 text-[16px] font-extrabold leading-[1.3] text-white shadow-[0_16px_34px_rgba(127,91,204,0.28)] transition hover:opacity-95"
                   style={{ textDecoration: "none" }}
                 >
@@ -105,40 +105,21 @@ export default function GamePage() {
             </div>
 
             <div className="relative min-h-[540px] overflow-hidden rounded-[34px] border border-white/75 bg-[#2b2140] shadow-[0_28px_80px_rgba(75,48,118,0.24)]">
-              {/* 대표 포스터 이미지 영역임 */}
+              {/* 황후 면접 메인 표지 이미지 영역임 */}
               <GameStorageImage
                 path={gameHero.posterPath}
-                alt={`${gameHero.title} 대표 이미지`}
+                alt={`${gameHero.title} 메인 표지`}
                 className="absolute inset-0"
               />
 
-              <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(25,18,38,0.08),rgba(25,18,38,0.76))]" />
-              <div className="absolute left-7 top-7 rounded-full border border-white/24 bg-white/18 px-4 py-2 text-[12px] font-black uppercase leading-[1.3] tracking-[0.14em] text-white backdrop-blur-md">
-                Main Preview
-              </div>
-
               <Link
-                href="/sanctuary/game/play/ep-01"
-                className="absolute left-8 top-1/2 flex h-[72px] w-[72px] -translate-y-1/2 items-center justify-center rounded-full bg-white/94 text-[#7f5bcc] shadow-[0_18px_40px_rgba(35,23,54,0.24)] transition hover:scale-105"
-                aria-label="preview play"
+                href="/sanctuary/game/play/ep-01?autoplay=1"
+                className="absolute left-1/2 top-1/2 flex h-[78px] w-[78px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white/94 text-[#7f5bcc] shadow-[0_18px_40px_rgba(35,23,54,0.24)] transition hover:scale-105"
+                aria-label="황후 면접 게임 재생"
                 style={{ textDecoration: "none" }}
               >
-                <Play size={29} fill="currentColor" />
+                <Play size={31} fill="currentColor" />
               </Link>
-
-              <div className="absolute bottom-9 left-9 right-9">
-                <p className="text-[12px] font-black uppercase leading-[1.4] tracking-[0.2em] text-white/68">
-                  Empress Interview
-                </p>
-
-                <h2 className="mt-3 text-[34px] font-black leading-[1.22] tracking-[-0.035em] text-white sm:text-[44px]">
-                  {gameHero.previewTitle}
-                </h2>
-
-                <p className="mt-5 max-w-[620px] break-keep text-[15px] font-medium leading-[1.85] text-white/82 sm:text-[16px]">
-                  {gameHero.previewDescription}
-                </p>
-              </div>
             </div>
           </div>
         </section>
@@ -374,7 +355,7 @@ export default function GamePage() {
                   />
 
                   <Link
-                    href={`/sanctuary/game/play/${firstEpisode.id}`}
+                    href={`/sanctuary/game/play/${firstEpisode.id}?autoplay=1`}
                     className="absolute left-1/2 top-1/2 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white/94 text-[#7f5bcc] shadow-lg"
                     aria-label="chapter play"
                     style={{ textDecoration: "none" }}
@@ -512,7 +493,7 @@ export default function GamePage() {
 
                     {isPlayable ? (
                       <Link
-                        href={`/sanctuary/game/play/${episode.id}`}
+                        href={`/sanctuary/game/play/${episode.id}?autoplay=1`}
                         className="mt-8 inline-flex min-h-[48px] w-full items-center justify-center rounded-full bg-[#f2ecff] px-5 py-2 text-[14px] font-black leading-[1.3] text-[#7f5bcc] transition hover:bg-[#8b68d8] hover:text-white"
                         style={{ textDecoration: "none" }}
                       >
@@ -594,7 +575,7 @@ export default function GamePage() {
             </div>
 
             <Link
-              href="/sanctuary/game/play/ep-01"
+              href="/sanctuary/game/play/ep-01?autoplay=1"
               className="inline-flex min-h-[60px] shrink-0 items-center justify-center gap-2.5 rounded-full bg-gradient-to-r from-[#9b78e5] to-[#7f5bcc] px-9 py-3 text-[16px] font-extrabold leading-[1.3] text-white shadow-[0_16px_34px_rgba(127,91,204,0.28)] transition hover:opacity-95"
               style={{ textDecoration: "none" }}
             >
