@@ -30,7 +30,7 @@ export default function Navbar() {
     { href: "/sanctuary", label: "Home" },
     { href: "/sanctuary/series", label: "Series" },
     { href: "/sanctuary/gallery", label: "Gallery" },
-    { href: "/sanctuary/game", label: "Game" },
+    // { href: "/sanctuary/game", label: "Game" },
   ]; // 메뉴 이름을 영어로 고정함
 
   const isActive = (href: string) =>
